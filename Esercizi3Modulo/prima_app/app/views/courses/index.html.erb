@@ -1,0 +1,41 @@
+<!-- creo una tabella con risultati ricerca -->
+<!-- intestazione con il termine di ricerca -->
+<h1>Searching for - <%= @search_term %></h1>
+
+<% if @courses.nil? %>
+
+<p>No courses found with relevant information... Sorry</p> 
+
+<% else %>
+<!-- creo tabella -->
+<table border="1">
+	<!-- intestazione tabella -->
+	<tr>
+		<th>Image</th>
+		<th>Name</th>
+		<th>Description</th>
+	</tr>
+
+	<!-- siamo nel body iteriamo sulla risposta -->
+	<% @courses.each do |course| %>
+		<!-- creo riga -->
+		<!-- aggiungo helper cycle per definire il valore della class della riga -->
+		<tr class=<%= cycle('even', 'odd') %>>
+			<!-- per ogni riga mostro le info dello ele array -->
+			<td>
+				<!-- immagine con helper image_tag -->
+				<%= image_tag(course["smallIcon"])%>
+			</td>
+			<td>
+				<!-- mostro il nome del corso -->
+				<%= course["name"] %>
+			</td>
+			<td>
+				<!-- mostro la descrizione del corso -->
+				<%= course["shortDescription"] %>
+			</td>
+		</tr>
+	<% end %>
+</table>
+
+<% end %>

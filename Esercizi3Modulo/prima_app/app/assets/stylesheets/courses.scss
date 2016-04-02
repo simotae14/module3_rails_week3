@@ -1,0 +1,19 @@
+// Place all the styles related to the courses controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// faccio collassare il bordo
+table {
+	border-collapse: collapse;
+}
+
+// inserisco del padding alle celle
+td {
+	padding: 12px;
+}
+
+// inserisco classe even per dare sfondo diverso alle
+// righe pari
+.even {
+	background-color: #D6E1C3;
+}
